@@ -39,13 +39,13 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
         },
-        saveBook: async (parent, { authors, description, title, bookId, image, link }, context) => {
+        saveBook: async (parent, args, context) => {
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { savedBooks: [authors, description, title, bookId, image, link] } },
-                    { new: true, runValidators: true }
-                ).populate('savedBooks');
+                    { $addToSet: { savedBooks: args.input} },
+                    { new: true}
+                );
 
                 return updatedUser;
             }
@@ -58,7 +58,7 @@ const resolvers = {
                     { _id: context.user._id },
                     { $pull: { savedBooks: { bookId: bookId } } },
                     { new: true }
-                ).populate('savedBooks');
+                );
 
                 return updatedUser;
             }
