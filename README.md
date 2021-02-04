@@ -2,8 +2,8 @@
   # Book Seach Engine
   [![License](https://img.shields.io/static/v1?label=License&message=MIT&color=blue)](https://img.shields.io/static/v1?label=License&message=MIT&color=blue)
   
-    ![Screenshot1](screenshot/saved_screenshot.png)
-    ![Screenshot2](screenshot/search_screenshot.png)
+![Screenshot1](screenshots/saved_screenshot.png)
+![Screenshot2](screenshots/search_screenshot.png)
 
   ## Description
   This application creates a way for the user to search and save books in the Google book list.  The user can look back at their saved books list and see what books they have saved.  They can also delete books from their save list.  All this functionality requires the user to be logged in so there is some security.
